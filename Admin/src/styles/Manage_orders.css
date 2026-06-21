@@ -1,0 +1,322 @@
+/* ================= MAIN PANEL ================= */
+.ord-top-panel {
+  margin-left: 240px;
+  padding: 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ================= TOP HEADER ================= */
+.ord-fixed-top {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  position: sticky;
+  top: 70px;
+  z-index: 20;
+}
+
+.ord-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.ord-top-row h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  color: #243746;
+}
+
+/* ================= VIEW BUTTONS ================= */
+.ord-view-toggle {
+  display: flex;
+  gap: 6px;
+  background: #eef2f5;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.ord-view-toggle button {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.ord-view-toggle .active {
+  background: #2f5d5b;
+  color: #fff;
+}
+
+/* ================= TABS ================= */
+.order-tabs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.order-tabs button {
+  padding: 7px 14px;
+  border-radius: 20px;
+  border: none;
+  background: #e6f2f1;
+  color: #2f5d5b;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.order-tabs .active-tab {
+  background: #2f5d5b;
+  color: white;
+}
+
+/* ================= SEARCH ================= */
+.ord-search {
+  width: 100%;
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+/* ================= TABLE ================= */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.ordersTable {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: 50px;
+}
+
+.ordersTable thead th {
+  background: #2f5d5b;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+.ordersTable td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+.ordersTable tr:hover {
+  background: #fff6ea;
+}
+
+/* ================= PRODUCT TABLE ================= */
+.tableProductBox {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.tableProductImg {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.tableProductInfo {
+  font-size: 12px;
+}
+
+/* ================= STATUS BADGES ================= */
+.ord-status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.ord-pending {
+  background: #facc15;
+  color: #000;
+}
+
+.ord-processing {
+  background: #3b82f6;
+}
+
+.ord-shipped {
+  background: #8b5cf6;
+}
+
+.ord-delivered {
+  background: #22c55e;
+}
+
+.ord-cancelled {
+  background: #ef4444;
+}
+
+/* ================= GRID VIEW ================= */
+.ordersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin-top: 60px;
+}
+
+.orderCard {
+  background: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  
+}
+.orderCard p {
+  margin: 4px 0;
+}
+
+.mobileProductBox {
+  display: flex;
+  margin: 10px;
+  margin-top: 6px;
+  line-height: 1.2;
+  gap: 10px;
+}
+
+.mobileProductImg {
+  width: 50px;
+  height: 50px;
+  border-radius: 6px;
+  object-fit: cover;
+  gap: 10px;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: #2f5d5b;
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* ================= STATUS DROPDOWN ================= */
+.ordersTable select,
+.orderCard select {
+  width: 140px;
+  padding: 8px 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.ordersTable select:hover,
+.orderCard select:hover {
+  border-color: #2874f0;
+}
+
+.ordersTable select:focus,
+.orderCard select:focus {
+  border-color: #2874f0;
+  box-shadow: 0 0 0 3px rgba(40, 116, 240, 0.15);
+}
+
+.status-pending {
+  color: #ff9800;
+}
+
+.status-processing {
+  color: #9c27b0;
+}
+
+.status-shipped {
+  color: #2196f3;
+}
+
+.status-delivered {
+  color: #4caf50;
+}
+
+.status-cancelled {
+  color: #f44336;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .ordersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .ordersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .ord-top-panel {
+    margin-left: 0;
+    padding: 12px;
+    margin-top: 120px;
+  }
+
+  .ordersTable {
+    margin-top: 1px;
+  }
+
+  .ordersGrid {
+    grid-template-columns: 1fr;
+    margin-top: 10px;
+  }
+
+  .order-tabs {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+  }
+
+  .order-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .ord-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ord-view-toggle {
+    margin-left: 170px;
+  }
+}

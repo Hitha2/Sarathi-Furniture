@@ -1,0 +1,270 @@
+/* ===== MAIN ===== */
+.dashboard {
+  padding: 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  margin-left: 240px;
+  margin-top: 65px;
+  transition: 0.3s;
+}
+
+/* ===== HEADER ===== */
+.dash-header {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.dash-header h2 {
+  color: #0f172a;
+}
+
+.dash-header p {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.filter {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+/* ===== KPI CARDS ===== */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 25px 0;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card svg {
+  font-size: 26px;
+  color: #22c55e;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  font-size: 14px;
+  color: #475569;
+}
+
+.card p {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0f172a;
+}
+
+/* ===== CHARTS ===== */
+.charts {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.chartBox {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.chartBox h3 {
+  margin-bottom: 10px;
+}
+
+/* ===== PIE LEGEND ===== */
+.pie-legend {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.legend-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+/* ===== STOCK ===== */
+.out-stock,
+.low-stock {
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+}
+
+.low-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.low-item:last-child {
+  border-bottom: none;
+}
+
+.danger {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.warning {
+  color: #ca8a04;
+  font-weight: 600;
+}
+
+.restock-btn {
+  padding: 5px 10px;
+  border: 1px solid #0f172a;
+  background: transparent;
+  color: #0f172a;
+  border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.restock-btn:hover {
+  background:#475569;
+  color: #fff;
+}
+
+/* ===== RECENT ORDERS TABLE ===== */
+.orders {
+  margin-top: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 12px;
+  overflow-x: auto; /* 🔥 important */
+}
+
+.orders h3 {
+  margin-bottom: 10px;
+}
+
+/* TABLE */
+.orders table {
+  width: 100%;
+  min-width: 650px; /* 🔥 keeps structure */
+  border-collapse: collapse;
+}
+
+/* HEADER */
+.orders th {
+  background: #2f5d5b;
+  color: #fff;
+  padding: 12px;
+  font-size: 13px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* CELLS */
+.orders td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+.orders tr:hover {
+  background: #fff6ea;
+}
+
+/* STATUS */
+.status {
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.delivered {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.status.pending {
+  background: #fef9c3;
+  color: #ca8a04;
+}
+
+.status.cancelled {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* ================================= */
+/* ========= RESPONSIVE ============ */
+/* ================================= */
+
+/* TABLET */
+@media (max-width: 992px) {
+  .dashboard {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .dash-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 50px;
+  }
+
+  .filter {
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* SMALL MOBILE */
+@media (max-width: 500px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

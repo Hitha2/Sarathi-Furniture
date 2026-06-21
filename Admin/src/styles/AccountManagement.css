@@ -1,0 +1,192 @@
+/* ================= MAIN ================= */
+.account-container {
+  margin-left: 240px;
+  padding: 20px;
+  background: #f4f6f9;
+  min-height: 100vh;
+  box-sizing: border-box;
+  margin-top: 70px;
+}
+
+/* ================= HEADER ================= */
+.account-fixed-header {
+  background: #fff;
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  position: sticky;
+  top: 70px;
+  z-index: 20;
+}
+
+.acc-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.account-fixed-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #2c3e50;
+}
+
+/* ================= TOGGLE ================= */
+.ord-view-toggle {
+  display: flex;
+  gap: 6px;
+  background: #eef2f5;
+  padding: 4px;
+  border-radius: 10px;
+}
+
+.ord-view-toggle button {
+  padding: 6px 14px;
+  border: none;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+.ord-view-toggle .active {
+  background: #2f5d5b;
+  color: #fff;
+}
+
+
+/* ================= SEARCH ================= */
+.acc-search {
+  width: 100%;
+  padding: 11px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+/* ================= CONTENT ================= */
+.account-content {
+  margin-top: 20px;
+}
+
+/* ================= TABLE ================= */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+thead th {
+  background: #2f5d5b;
+  color: #fff;
+  padding: 14px;
+  text-align: center;
+  font-size: 14px;
+}
+
+td {
+  padding: 14px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+  font-size: 13px;
+}
+
+tr:hover {
+  background: #fff6ea;
+}
+
+/* ================= GRID ================= */
+.usersGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.userGridCard {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  transition: 0.3s;
+}
+
+.userGridCard:hover {
+  transform: translateY(-3px);
+}
+
+.userGridCard h4 {
+  margin: 0;
+  font-size: 17px;
+  color: #222;
+}
+
+.userGridCard p {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* LAPTOP */
+@media (max-width: 1200px) {
+  .usersGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* TABLET */
+@media (max-width: 900px) {
+  .usersGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+  .account-container {
+    margin-left: 0;
+    margin-top: 120px;
+    padding: 15px;
+  }
+
+  .acc-top-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .acc-view-toggle {
+    
+    justify-content: flex-start;
+  }
+
+  .usersGrid {
+    grid-template-columns: 1fr;
+  }
+
+  table {
+    min-width: 700px;
+  }
+}

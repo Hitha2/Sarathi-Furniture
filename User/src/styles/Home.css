@@ -1,0 +1,323 @@
+/* ================= HERO SECTION ================= */
+.hero-section {
+  background: #2f5d5b;
+  color: white;
+  text-align: center;
+  padding: 80px 0 100px;
+  margin-top: 10px;
+}
+
+/* Main Title */
+.hero-title {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.hero-title span {
+  color: #ffd6a5;
+}
+
+/* Subtitle */
+.hero-subtitle {
+  margin-bottom: 30px;
+  color: #ddd;
+}
+
+
+/* ================= CAROUSEL ================= */
+
+.carousel-caption {
+  pointer-events: auto;
+  z-index: 2;
+}
+
+.carousel-item img {
+  pointer-events: none;
+}
+
+/* ✅ FIXED (removed fixed height) */
+.carousel-item {
+  height: auto;
+}
+
+/* ✅ FIXED (full width for all screens) */
+.carousel-img {
+  width: 100%;
+  height: 65vh;
+  object-fit: cover;
+    position: relative;
+}
+
+/* Space from top */
+#heroCarousel {
+  margin-top: 0;
+}
+
+
+/* ================= TEXT ON IMAGE ================= */
+.custom-caption {
+  position: absolute;
+   z-index: 10;
+    top: 50%;
+  left: 10%;
+   transform: translateY(-50%);
+  text-align: left;
+  max-width: 500px;
+    pointer-events: auto;
+}
+
+/* "New Arrival" */
+.custom-caption h1 mark {
+  /* background: #b4afaa; */
+  color: white;
+  padding: 5px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+
+/* Heading */
+.custom-caption h1 {
+  font-size: 58px;
+  font-weight: 600;
+  color: #1e2d2f;
+  /* margin: 20px 0; */
+  line-height: 1.2;
+}
+
+.custom-caption span {
+  /* margin-top: 100px; */
+  color: #c89b6d;
+}
+
+.custom-caption p {
+  font-size: 16px;
+  color: #555;
+  /* margin: 15px 0 25px; */
+  /* margin-top: 1px; */
+}
+
+.custom-caption button {
+  background: #0d1f23;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.custom-caption button:hover {
+  background: #c89b6d;
+}
+
+
+/* ================= FEATURES SECTION ================= */
+
+.features-section {
+  padding: 80px 40px;
+  background: white;
+  text-align: center;
+}
+
+.features-title {
+  font-size: 40px;
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #2f5d5b;
+}
+
+.features-title span {
+  color: #d57b0c;
+}
+
+.features-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: linear-gradient(to right, #2f5d5b, #3e7c78);
+  gap: 25px;
+  padding: 20px;
+}
+
+.feature-box {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  padding: 30px 20px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 15px;
+  background: #ffd6a5;
+  color: #2f5d5b;
+  font-size: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.feature-box h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ffffff;
+}
+
+.feature-box p {
+  font-size: 14px;
+  color: #e0e0e0;
+}
+
+
+/* ================= CATEGORY SECTION ================= */
+
+.category-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.category-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+}
+
+.category-title span {
+  color: brown;
+}
+
+/* GRID */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+/* CARD */
+.category-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 15px;
+  text-decoration: none;
+  color: black;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+}
+
+.category-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.category-card p {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+
+
+/* ================= LIGHT COLOR ADDITION (NO CHANGES) ================= */
+
+/* Light warm background instead of plain white */
+.features-section {
+  background: #f8f5f2; /* soft beige */
+}
+
+/* Category cards light color */
+.category-card {
+  background: #8f8d8b; /* very light cream */
+}
+
+/* Optional: slightly enhance card hover for consistency */
+.category-card:hover {
+  background: #fff3e6;
+}
+
+/* ================= RESPONSIVE FIXES ================= */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .features-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .custom-caption h1 {
+    font-size: 36px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .hero-section {
+  background: #2f5d5b;
+  color: white;
+  text-align: center;
+  padding: 15px 0 100px;
+  margin-top: 32px;
+}
+  .hero-title {
+    font-size: 28px;
+    margin-top: 70px;
+  }
+
+  .carousel-img {
+    height: 40vh;
+  }
+
+  .custom-caption {
+     /* top: 15%;
+    left: 5%;
+    max-width: 90%;
+    margin-top: 30px;  */
+     top: 50% !important;   
+    transform: translateY(-50%);
+    padding: 10px 15px; 
+  }
+   
+.category-section {
+  padding: 10px 10px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+  .custom-caption h1 {
+    font-size: 24px;
+  }
+
+  .custom-caption p {
+    font-size: 12px;
+  }
+
+  .features-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,20 @@
+.admin-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  width: 100%;
+  background: #0e3433;
+  color: white;
+  text-align: center;
+  padding: 12px;
+  font-size: 14px;
+
+  z-index: 9999;
+}
+@media (max-width: 768px) {
+  .admin-footer {
+    margin-left: 0;
+  }
+}

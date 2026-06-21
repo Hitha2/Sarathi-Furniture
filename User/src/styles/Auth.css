@@ -1,0 +1,329 @@
+.authContainer {
+  position: relative;   /* ✅ IMPORTANT */
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;     /* ✅ IMPORTANT */
+}
+.authContainer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: url("../assets/images/loginbg.jpg");
+  background-size: cover;
+  background-position: center;
+
+  filter: blur(8px);       
+  transform: scale(1.1);    
+
+  z-index: -1;
+}
+.authBox {
+  position: relative;  
+  z-index: 1;
+  margin: 50px;
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 30px;
+  width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.authBox h2 {
+  margin-bottom: 20px;
+}
+
+.authBox input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.authBox button {
+  width: 100%;
+  padding: 10px;
+  background:#2f5d5b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.authBox button:hover {
+  background: #374151;
+}
+
+.authBox p {
+  margin-top: 15px;
+  font-size: 14px;
+}
+.authBox textarea{
+  width:100%;
+  padding: 10px;
+  margin:10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  resize: none;
+  height: 80px;
+}
+
+.captchaBox {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  padding: 0;
+  margin: 15px 0;
+
+  border: 1px solid #d0d0d0;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f4f5f8;
+}
+
+/* CAPTCHA TEXT */
+.captchaText {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 6px;
+}
+
+/* REFRESH BUTTON */
+.refreshBtn {
+  width: 85px !important;
+  height: 48px !important;
+
+  display: block !important;   /* remove inline button behavior */
+
+  margin: 0 !important;
+  padding: 0 !important;
+
+  background: #2f6766;
+  color: white;
+
+  border: none;
+  border-radius: 0;
+
+  line-height: 48px;           /* center icon vertically */
+  text-align: center;
+
+  font-size: 28px;
+  cursor: pointer;
+
+  appearance: none;
+  -webkit-appearance: none;
+}
+.refreshBtn:active {
+  transform: scale(1); 
+}
+
+/* INPUT BELOW */
+.captchaInput {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+.forgotText {
+  text-align: right;
+  font-size: 13px;
+  color: #2563eb;
+  cursor: pointer;
+  margin-top: -5px;
+}
+
+.forgotText:hover {
+  text-decoration: underline;
+}
+
+.infoText {
+  font-size: 13px;
+  color: green;
+  margin-top: 8px;
+}
+.errorText {
+  color: red;
+  font-size: 13px;
+  margin-top: 5px;
+}
+
+.socialLogin {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+  gap: 10px;
+}
+.socialBtn {
+  flex: 1; 
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon{
+  font-size: 20px;
+}
+.googleBtn {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.githubBtn {
+  background: #24292e;
+  color: white;
+}
+.facebookBtn{
+  background: red; 
+  color: white;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  color: #888;
+  font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ccc;
+}
+
+.divider span {
+  margin: 0 10px;
+  white-space: nowrap;
+}
+/* ================= TABLET ================= */
+@media (max-width: 1024px) {
+  .authBox {
+    width: 90%;
+    max-width: 400px;
+    padding: 25px;
+  }
+
+  .captchaBox {
+    gap: 20px; /* fix huge gap */
+    justify-content: space-between;
+  }
+}
+@media (max-width: 768px) {
+  .authContainer {
+   padding: 20px;
+    min-height: 100vh;
+    align-items: center;
+    margin-top: 0;
+    padding-top: 90px;
+    padding-bottom: 90px;
+    box-sizing: border-box;
+  }
+
+  .authBox {
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .authBox h2 {
+    font-size: 20px;
+  }
+
+  .authBox input,
+  .authBox textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .authBox button {
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  /* CAPTCHA FIX */
+  /* ================= CAPTCHA BOX ================= */
+.captchaBox {
+  width: 100%;
+  height: 48px;
+  display: flex;
+  align-items: stretch;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+  background: #fff;
+}
+
+/* LEFT CAPTCHA TEXT */
+.captchaText {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding-left: 18px;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 8px;
+  color: #111;
+  background: #f8f8f8;
+  user-select: none;
+}
+
+/* RIGHT REFRESH BUTTON */
+.refreshBtn {
+  width: 70px;
+  min-width: 70px;
+  border: none;
+  background: #2f6664;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+  margin: 0;
+  outline: none;
+  transition: 0.3s;
+}
+
+.refreshBtn:hover {
+  background: #24514f;
+}
+
+  /* SOCIAL BUTTON STACK */
+ .socialLogin {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;   /* ✅ prevent wrapping */
+}
+
+  .socialBtn {
+    width: 100%;
+  }
+}
+

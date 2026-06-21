@@ -1,0 +1,402 @@
+/* ===== MAIN LAYOUT ===== */
+.profilePage {
+  display: flex;
+  margin-top: 80px;
+  min-height: 100vh;
+  background: #f1f3f6;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 260px;
+  background: #fff;
+  padding: 20px;
+  border-right: 1px solid #ddd;
+}
+
+.userBox {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.profileImgBox {
+  width: 55px;
+  height: 55px;
+}
+
+.profileImgBox img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userBox h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ===== MENU ===== */
+.menuTitle {
+  font-size: 13px;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.menuItem {
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  transition: 0.2s;
+}
+
+.menuItem:hover {
+  background: #f5f5f5;
+}
+
+.menuItem.active {
+  background: #e8f0fe;
+  color: #2874f0;
+  font-weight: 600;
+}
+
+/* ===== CONTENT ===== */
+.content {
+  flex: 1;
+  padding: 25px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  max-width: 850px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* ===== HEADER ===== */
+.sectionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.sectionHeader h3 {
+  font-size: 18px;
+}
+
+/* ===== INPUTS ===== */
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+/* ===== ROW ===== */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+/* ===== GENDER ===== */
+.gender {
+  margin-top: 10px;
+}
+
+.gender label {
+  margin-right: 20px;
+  font-size: 14px;
+}
+
+/* ===== MAIN EDIT BUTTON ===== */
+.editBtnMain {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.editBtnMain:hover {
+  background: #cfcfcf;
+}
+
+/* ===== SAVE BUTTON ===== */
+.saveBtnMain {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.saveBtnMain:hover {
+  background: #388e3c;
+}
+
+/* ===== ADDRESS BUTTON ===== */
+.addAddressBtn {
+  color: #2874f0;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 15px 0;
+}
+
+.addAddressBtn:hover {
+  text-decoration: underline;
+}
+
+/* ===== ADDRESS CARD ===== */
+.addressCard {
+  background: #fafafa;
+  padding: 15px;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.addressCard h4 {
+  font-size: 15px;
+}
+
+.addressCard p {
+  font-size: 14px;
+  margin: 2px 0;
+  color: #444;
+}
+
+/* Hover effect */
+.addressCard:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ===== ADDRESS ACTIONS ===== */
+.addressActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.editBtn {
+  background: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.editBtn:hover {
+  background: #cfcfcf;
+}
+
+.deleteBtn {
+  background: #e53935;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.deleteBtn:hover {
+  background: #c62828;
+}
+
+/* ===== ADDRESS FORM ===== */
+.addressFormCard {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 6px;
+  margin-top: 15px;
+}
+
+.addressFormCard .row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.addressFormCard textarea {
+  width: 100%;
+  margin: 10px 0;
+}
+
+/* ===== BUTTON GROUP ===== */
+.btnGroup {
+  margin-top: 15px;
+}
+
+.btnGroup button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.btnGroup button:first-child {
+  background: #2874f0;
+  color: white;
+}
+
+.btnGroup button:last-child {
+  background: #878787;
+  color: white;
+}
+
+/* //profile image remove popup */
+
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff;
+  width: 320px;
+  padding: 22px;
+  border-radius: 14px;
+  text-align: center;
+  animation: popupFade 0.25s ease;
+}
+
+.popup-box h3 {
+  margin-bottom: 10px;
+}
+
+.popup-box p {
+  color: #555;
+  font-size: 14px;
+}
+
+.popup-actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.yes-btn,
+.no-btn {
+  border: none;
+  padding: 9px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.yes-btn {
+  background: #e53935;
+  color: white;
+}
+
+.no-btn {
+  background: #ddd;
+}
+
+@keyframes popupFade {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .profilePage {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .content {
+    padding: 15px;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .profileImgBox{
+    margin-top: 20px;
+  }
+  .addressFormCard .row {
+    flex-direction: column;
+  }
+
+  .addressActions {
+    flex-direction: column;
+  }
+
+  .addressActions button {
+    width: 100%;
+  }
+
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .card {
+    padding: 15px;
+  }
+
+  input,
+  textarea {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .editBtnMain,
+  .saveBtnMain {
+    width: 100%;
+  }
+}
