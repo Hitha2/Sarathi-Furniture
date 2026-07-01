@@ -18,7 +18,7 @@ import uploadRoutes from "./routes/uploadRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 
 import categoryRoutes from "./routes/categoryRoutes.js";
-import subcategoryRoutes from "./routes/subcategoryRoutes.js";
+import subcategoryRoutes from "./routes/subCategoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 
 import wishlistRoutes from "./routes/wishlistRoutes.js";
