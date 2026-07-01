@@ -31,7 +31,7 @@ const OrderDetails = () => {
   useEffect(() => {
     const fetchOrder = async () => {
       const res = await fetch(
-        `http://localhost:5000/api/orders/${orderId}`
+        `https://sarathi-furniture.onrender.com/api/orders/${orderId}`
       );
       const data = await res.json();
       setOrder(data);
@@ -48,7 +48,7 @@ const OrderDetails = () => {
           existingReview.productId;
 
         const stockRes = await fetch(
-          `http://localhost:5000/api/product/${pid}`
+          `https://sarathi-furniture.onrender.com/api/product/${pid}`
         );
 
         const stockData = await stockRes.json();
@@ -474,7 +474,7 @@ const confirmCancelOrder = async () => {
   try {
 
     const res = await fetch(
-      `http://localhost:5000/api/orders/${order._id}/items/${productId}/cancel`,
+      `https://sarathi-furniture.onrender.com/api/orders/${order._id}/items/${productId}/cancel`,
       {
         method: "PUT",
       }
@@ -540,7 +540,7 @@ const getDiscountedPrice = (item) => {
         <div className="product-box">
 
         <img
-          src={`http://localhost:5000/uploads/${
+          src={`https://sarathi-furniture.onrender.com/uploads/${
             selectedItem?.productId?.image || selectedItem?.image
           }`}
           alt=""
@@ -706,7 +706,7 @@ const getDiscountedPrice = (item) => {
                   className="save-btn"
                   onClick={async () => {
                     const res = await fetch(
-                      `http://localhost:5000/api/orders/${order._id}/address`,
+                      `https://sarathi-furniture.onrender.com/api/orders/${order._id}/address`,
                       {
                         method: "PUT",
                         headers: {
@@ -922,7 +922,7 @@ const getDiscountedPrice = (item) => {
                   try {
 
                     const res = await fetch(
-                      `http://localhost:5000/api/orders/${order._id}/review`,
+                      `https://sarathi-furniture.onrender.com/api/orders/${order._id}/review`,
                       {
                         method: "PUT",
                         headers: {

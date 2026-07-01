@@ -85,7 +85,7 @@ useEffect(() => {
 }, []);
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/product")
+  fetch("https://sarathi-furniture.onrender.com/api/product")
     .then((res) => res.json())
     .then((data) => {
       const products = Array.isArray(data) ? data : [];
@@ -95,7 +95,7 @@ useEffect(() => {
 }, []);
 // shipping charge calculation
 useEffect(() => {
-  fetch("http://localhost:5000/api/settings")
+  fetch("https://sarathi-furniture.onrender.com/api/settings")
     .then((res) => res.json())
     .then((data) => {
       setShippingRate(data.shippingRatePerKm || 0);
@@ -105,7 +105,7 @@ useEffect(() => {
 
 
 useEffect(() => {
-  fetch("http://localhost:5000/api/settings")
+  fetch("https://sarathi-furniture.onrender.com/api/settings")
     .then((res) => res.json())
     .then((data) => {
       setRatePerKm(data.shippingRatePerKm || 0);
@@ -128,7 +128,7 @@ useEffect(() => {
       return;
     }
 
-    fetch(`http://localhost:5000/api/profile/${userId}`)
+    fetch(`https://sarathi-furniture.onrender.com/api/profile/${userId}`)
       .then((res) => res.json())
       .then((data) => {
         const addr = data.addresses || [];
@@ -159,7 +159,7 @@ useEffect(() => {
     if (!token) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/wishlist", {
+      const res = await fetch("https://sarathi-furniture.onrender.com/api/wishlist", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -368,7 +368,7 @@ useEffect(() => {
 
     const updatedCart = await Promise.all(
       cart.map(async (item) => {
-        const res = await fetch(`http://localhost:5000/api/product/${item._id}`);
+        const res = await fetch(`https://sarathi-furniture.onrender.com/api/product/${item._id}`);
         const product = await res.json();
 
         return {
@@ -506,7 +506,7 @@ const validateNewAddress = () => {
             <div key={item._id} className="cart-item">
               
               <img
-                src={`http://localhost:5000/uploads/${item.image}`}
+                src={`https://sarathi-furniture.onrender.com/uploads/${item.image}`}
                 alt=""
               />
 
@@ -830,7 +830,7 @@ const validateNewAddress = () => {
             for (const item of cart) {
               try {
                 const res = await fetch(
-                  `http://localhost:5000/api/product/${item._id}`
+                  `https://sarathi-furniture.onrender.com/api/product/${item._id}`
                 );
 
                 const product = await res.json();
@@ -1001,8 +1001,8 @@ const validateNewAddress = () => {
                       const isLiked = likedMap[item._id];
 
                         const url = isLiked
-                          ? `http://localhost:5000/api/wishlist/${item._id}`
-                          : `http://localhost:5000/api/wishlist`;
+                          ? `https://sarathi-furniture.onrender.com/api/wishlist/${item._id}`
+                          : `https://sarathi-furniture.onrender.com/api/wishlist`;
 
                         const res = await fetch(url, {
                           method: isLiked ? "DELETE" : "POST",
@@ -1037,7 +1037,7 @@ const validateNewAddress = () => {
                 )}
               </div>
               <img
-                src={`http://localhost:5000/uploads/${item.image}`}
+                src={`https://sarathi-furniture.onrender.com/uploads/${item.image}`}
                 alt=""
               />
               <p className="suggested-name">{item.name}</p>

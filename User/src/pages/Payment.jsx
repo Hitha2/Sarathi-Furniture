@@ -34,7 +34,7 @@ const Payment = () => {
     try {
       const userId = localStorage.getItem("userId");
 
-      const res = await axios.post("http://localhost:5000/api/orders", {
+      const res = await axios.post("https://sarathi-furniture.onrender.com/api/orders", {
       userId: localStorage.getItem("userId"),
       paymentMethod: method, // ✅ ADD THIS
 
@@ -93,7 +93,7 @@ const Payment = () => {
 const handleRazorpay = async () => {
   try {
     const { data } = await axios.post(
-      "http://localhost:5000/api/payment/create-order",
+      "https://sarathi-furniture.onrender.com/api/payment/create-order",
       {
         amount: Math.round(totalAmount * 100),
       }
@@ -114,14 +114,14 @@ const handleRazorpay = async () => {
         try {
 
           // ✅ VERIFY PAYMENT
-          await axios.post("http://localhost:5000/api/payment/verify", {
+          await axios.post("https://sarathi-furniture.onrender.com/api/payment/verify", {
             razorpay_order_id: orderId,
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_signature: response.razorpay_signature,
           });
 
           // ✅ SAVE ORDER
-          await axios.post("http://localhost:5000/api/orders", {
+          await axios.post("https://sarathi-furniture.onrender.com/api/orders", {
             userId: localStorage.getItem("userId"),
             paymentMethod: "online",
 

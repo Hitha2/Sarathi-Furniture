@@ -29,7 +29,7 @@ const ProductDetails = () => {
   const fetchProduct = async () => {
     try {
       const res = await fetch(
-        `http://localhost:5000/api/product/${id}`
+        `https://sarathi-furniture.onrender.com/api/product/${id}`
       );
 
       const data = await res.json();
@@ -53,7 +53,7 @@ useEffect(() => {
     if (!token) return;
 
     try {
-      const res = await fetch("http://localhost:5000/api/wishlist", {
+      const res = await fetch("https://sarathi-furniture.onrender.com/api/wishlist", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -95,7 +95,7 @@ useEffect(() => {
       ? product.categoryId._id
       : product.categoryId;
 
-  fetch(`http://localhost:5000/api/product?category=${categoryId}`)
+  fetch(`https://sarathi-furniture.onrender.com/api/product?category=${categoryId}`)
     .then((res) => res.json())
     .then((data) => {
       const products = Array.isArray(data) ? data : [];
@@ -123,7 +123,7 @@ useEffect(() => {
     if (liked) {
       // ❌ REMOVE
       const res = await fetch(
-        `http://localhost:5000/api/wishlist/${product._id}`,
+        `https://sarathi-furniture.onrender.com/api/wishlist/${product._id}`,
         {
           method: "DELETE",
           headers: {
@@ -138,7 +138,7 @@ useEffect(() => {
       }
     } else {
       // ✅ ADD
-      const res = await fetch("http://localhost:5000/api/wishlist", {
+      const res = await fetch("https://sarathi-furniture.onrender.com/api/wishlist", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -187,7 +187,7 @@ useEffect(() => {
         {/* LEFT IMAGE */}
         <div className="image-section">
           <img
-            src={`http://localhost:5000/uploads/${product.image}`}
+            src={`https://sarathi-furniture.onrender.com/uploads/${product.image}`}
             alt=""
           />
 
@@ -374,7 +374,7 @@ useEffect(() => {
                        const isLiked = likedMap[item._id];
 
                        const res = await fetch(
-                        "http://localhost:5000/api/wishlist",
+                        "https://sarathi-furniture.onrender.com/api/wishlist",
                         {
                           method: "POST",
                           headers: {
@@ -412,7 +412,7 @@ useEffect(() => {
                     {likedMap[item._id] ? <FaHeart /> : <FaRegHeart />}
                   </div>
                   <img
-                    src={`http://localhost:5000/uploads/${item.image}`}
+                    src={`https://sarathi-furniture.onrender.com/uploads/${item.image}`}
                     alt=""
                   />
 

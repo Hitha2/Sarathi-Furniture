@@ -10,7 +10,7 @@ const Home = () => {
 
   // FIXED ONLY THIS API URL
   useEffect(() => {
-    fetch("http://localhost:5000/api/category")   
+    fetch("https://sarathi-furniture.onrender.com/api/category")   
       .then(res => res.json())
       .then(data => setCategories(data))
       .catch(err => console.log(err));
@@ -103,7 +103,7 @@ const Home = () => {
             className="category-card"
           >
             <img 
-              src={`http://localhost:5000/uploads/${cat.image}`} 
+              src={`https://sarathi-furniture.onrender.com/uploads/${cat.image}`} 
               alt={cat.name} 
             />
             <p>{cat.name}</p>

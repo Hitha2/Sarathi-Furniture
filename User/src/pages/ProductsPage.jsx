@@ -42,7 +42,7 @@ const ProductsPage = () => {
 
   // ================= CATEGORY =================
   useEffect(() => {
-    axios.get("http://localhost:5000/api/category")
+    axios.get("https://sarathi-furniture.onrender.com/api/category")
       .then(res => setCategories(res.data))
       .catch(err => console.log(err));
   }, []);
@@ -51,7 +51,7 @@ const ProductsPage = () => {
   useEffect(() => {
     if (filters.category) {
       axios
-        .get(`http://localhost:5000/api/subcategory/${filters.category}`)
+        .get(`https://sarathi-furniture.onrender.com/api/subcategory/${filters.category}`)
         .then(res => setSubcategories(res.data))
         .catch(err => console.log(err));
     } else {
@@ -92,7 +92,7 @@ useEffect(() => {
       setLoading(true);
 
       const res = await axios.get(
-        `http://localhost:5000/api/product?${query}`
+        `https://sarathi-furniture.onrender.com/api/product?${query}`
       );
 
       setProducts(res.data); // ✅ no pagination response anymore
@@ -118,7 +118,7 @@ useEffect(() => {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/wishlist", {
+      const res = await fetch("https://sarathi-furniture.onrender.com/api/wishlist", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -153,7 +153,7 @@ const toggleWishlist = async (product) => {
     if (isLiked) {
       // ❌ REMOVE
       const res = await fetch(
-        `http://localhost:5000/api/wishlist/${product._id}`,
+        `https://sarathi-furniture.onrender.com/api/wishlist/${product._id}`,
         {
           method: "DELETE",
           headers: {
@@ -172,7 +172,7 @@ const toggleWishlist = async (product) => {
     } else {
       // ✅ ADD
       const res = await fetch(
-        "http://localhost:5000/api/wishlist",
+        "https://sarathi-furniture.onrender.com/api/wishlist",
         {
           method: "POST",
           headers: {
@@ -546,7 +546,7 @@ const totalPages = isMobile
                         <FaRegHeart />
                       )}
                     </div>
-                    <img src={`http://localhost:5000/uploads/${p.image}`} alt="" />
+                    <img src={`https://sarathi-furniture.onrender.com/uploads/${p.image}`} alt="" />
 
                     {/* ✅ STOCK BADGE */}
                     {p.stock === 0 && (

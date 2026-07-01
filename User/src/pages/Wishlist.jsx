@@ -19,7 +19,7 @@ const Wishlist = () => {
 
       try {
         const res = await fetch(
-          "http://localhost:5000/api/wishlist",
+          "https://sarathi-furniture.onrender.com/api/wishlist",
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -43,7 +43,7 @@ const Wishlist = () => {
 
             try {
               const productRes = await fetch(
-                `http://localhost:5000/api/product/${item.productId._id}`
+                `https://sarathi-furniture.onrender.com/api/product/${item.productId._id}`
               );
 
               const latestProduct = await productRes.json();
@@ -100,7 +100,7 @@ const Wishlist = () => {
           }}
           >
             <img
-              src={`http://localhost:5000/uploads/${product.image}`}
+              src={`https://sarathi-furniture.onrender.com/uploads/${product.image}`}
               alt="product"
             />
 

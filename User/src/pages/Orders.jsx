@@ -22,7 +22,7 @@ const Orders = () => {
         const userId = localStorage.getItem("userId");
 
         const res = await fetch(
-          `http://localhost:5000/api/orders/user/${userId}`
+          `https://sarathi-furniture.onrender.com/api/orders/user/${userId}`
         );
 
         const data = await res.json();
@@ -116,7 +116,7 @@ const Orders = () => {
 
                     {/* IMAGE */}
                     <img
-                      src={`http://localhost:5000/uploads/${
+                      src={`https://sarathi-furniture.onrender.com/uploads/${
                         item.image || item.productId?.image
                       }`}
                       alt=""

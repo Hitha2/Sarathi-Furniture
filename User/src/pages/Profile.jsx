@@ -79,7 +79,7 @@ useEffect(() => {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/profile/${userId}`,
+        `https://sarathi-furniture.onrender.com/api/profile/${userId}`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -130,7 +130,7 @@ const handleImageChange = async (e) => {
   const formData = new FormData();
   formData.append("image", file);
 
-  const res = await fetch("http://localhost:5000/api/upload", {
+  const res = await fetch("https://sarathi-furniture.onrender.com/api/upload", {
     method: "POST",
     body: formData
   });
@@ -144,7 +144,7 @@ const handleImageChange = async (e) => {
   // SAVE PROFILE
 const saveData = async () => {
   try {
-    const res = await fetch(`http://localhost:5000/api/profile/${userId}`, {
+    const res = await fetch(`https://sarathi-furniture.onrender.com/api/profile/${userId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -188,7 +188,7 @@ const saveData = async () => {
   }
 
   const res = await fetch(
-    `http://localhost:5000/api/profile/address/${userId}`,
+    `https://sarathi-furniture.onrender.com/api/profile/address/${userId}`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -237,7 +237,7 @@ const handleEditAddress = (addr) => {
 
 const updateAddress = async () => {
   const res = await fetch(
-    `http://localhost:5000/api/profile/${userId}/address/${editingAddressId}`,
+    `https://sarathi-furniture.onrender.com/api/profile/${userId}/address/${editingAddressId}`,
     {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -268,7 +268,7 @@ const updateAddress = async () => {
 const deleteAddress = async (addressId) => {
   try {
     const res = await fetch(
-      `http://localhost:5000/api/profile/${userId}/address/${addressId}`,
+      `https://sarathi-furniture.onrender.com/api/profile/${userId}/address/${addressId}`,
       {
         method: "DELETE"
       }
@@ -293,7 +293,7 @@ const confirmRemoveImage = async () => {
     setProfileImage("");
 
     // update database
-    await fetch(`http://localhost:5000/api/profile/${userId}`, {
+    await fetch(`https://sarathi-furniture.onrender.com/api/profile/${userId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
