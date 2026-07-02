@@ -39,14 +39,28 @@ const server = http.createServer(app);
 
 /* ================= ALLOWED FRONTEND ORIGINS ================= */
 const allowedOrigins = [
-  "http://localhost:5173", // Vite
+  "http://localhost:5173",
   "http://localhost:5174",
-  "http://localhost:3000", // CRA if used
-   "https://sarathi-furniture-55b80k6gp-hithaishi.vercel.app",
-   "https://sarathi-furniture-bqatxm7vf-hithaishi.vercel.app",
-   "https://sarathi-furniture-cfqckcbws-hithaishi.vercel.app",
-   
+  "http://localhost:3000",
+  "https://sarathi-furniture.vercel.app",
 ];
+
+app.use(
+  cors({
+    origin(origin, callback) {
+      if (
+        !origin ||
+        allowedOrigins.includes(origin) ||
+        origin.endsWith(".vercel.app")
+      ) {
+        callback(null, true);
+      } else {
+        callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true,
+  })
+);
 
 /* ================= DATABASE ================= */
 connectDB();
