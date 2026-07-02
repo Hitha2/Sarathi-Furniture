@@ -43,6 +43,8 @@ const allowedOrigins = [
   "http://localhost:5174",
   "http://localhost:3000", // CRA if used
    "https://sarathi-furniture-55b80k6gp-hithaishi.vercel.app",
+   "https://sarathi-furniture-bqatxm7vf-hithaishi.vercel.app",
+   
 ];
 
 /* ================= DATABASE ================= */
