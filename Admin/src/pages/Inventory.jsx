@@ -26,7 +26,7 @@ const Inventory = () => {
   const itemsPerPage =
   viewMode === "grid" ? gridPerPage : tablePerPage;
 
-  const API = "http://localhost:5000/api/inventory";
+  const API = "hhttps://sarathi-furniture.onrender.com/api/inventory";
 
   useEffect(() => {
     fetchInventory();

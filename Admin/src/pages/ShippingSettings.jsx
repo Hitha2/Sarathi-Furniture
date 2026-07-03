@@ -6,7 +6,7 @@ const ShippingSettings = ({ isOpen, onClose }) => {
   const [ratePerKm, setRatePerKm] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/settings")
+    fetch("https://sarathi-furniture.onrender.com/api/settings")
       .then((res) => res.json())
       .then((data) => {
         setRatePerKm(data.shippingRatePerKm || 0);
@@ -17,7 +17,7 @@ const ShippingSettings = ({ isOpen, onClose }) => {
   const saveRate = async () => {
     try {
       const res = await fetch(
-        "http://localhost:5000/api/settings",
+        "https://sarathi-furniture.onrender.com/api/settings",
         {
           method: "PUT",
           headers: {

@@ -50,7 +50,7 @@ const AccountManagement1 = () => {
 
 
         const res = await axios.get(
-          "http://localhost:5000/api/orders/report"
+          "https://sarathi-furniture.onrender.com/api/orders/report"
         );
 
       setOrders(res.data);

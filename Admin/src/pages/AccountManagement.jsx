@@ -3,7 +3,7 @@ import axios from "axios";
 import "../styles/AccountManagement.css";
 import { useLocation } from "react-router-dom";
 
-const API = "http://localhost:5000/api/admin";
+const API = "https://sarathi-furniture.onrender.com/api/admin";
 
 function AccountManagement() {
   const [users, setUsers] = useState([]);

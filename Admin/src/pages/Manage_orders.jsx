@@ -14,7 +14,7 @@ const AdminOrders = () => {
   const [viewMode, setViewMode] = useState("table"); // table | grid
   const location = useLocation();
   const query = new URLSearchParams(location.search).get("q") || "";
-  const API = "http://localhost:5000/api/orders";
+  const API = "https://sarathi-furniture.onrender.com/api/orders";
 
   const [currentPage, setCurrentPage] = useState(1);
   const gridPerPage = 8; // 👉 change size here
@@ -269,7 +269,7 @@ const AdminOrders = () => {
 
                 <div className="mobileProductBox">
                   <img
-                    src={`http://localhost:5000/uploads/${
+                    src={`https://sarathi-furniture.onrender.com/uploads/${
                       row.item.image || row.item.productId?.image
                     }`}
                     alt=""
@@ -454,7 +454,7 @@ const AdminOrders = () => {
       <td>
         <div className="tableProductBox">
           <img
-            src={`http://localhost:5000/uploads/${
+            src={`https://sarathi-furniture.onrender.com/uploads/${
               row.item.image || row.item.productId?.image
             }`}
             className="tableProductImg"

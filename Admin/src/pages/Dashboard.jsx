@@ -46,15 +46,15 @@ function Dashboard() {
     //   setProductData(res.data);
     // });
 
-    axios.get("http://localhost:5000/api/dashboard/stock")
+    axios.get("https://sarathi-furniture.onrender.com/api/dashboard/stock")
     .then(res => setStockData(res.data))
     .catch(err => console.log("Stock error:", err));
 
-    axios.get(`http://localhost:5000/api/dashboard/summary?filter=${filter}`)
+    axios.get(`https://sarathi-furniture.onrender.com/api/dashboard/summary?filter=${filter}`)
       .then(res => setSummary(res.data))
       .catch(console.log);
 
-    axios.get(`http://localhost:5000/api/dashboard/sales?filter=${filter}`)
+    axios.get(`https://sarathi-furniture.onrender.com/api/dashboard/sales?filter=${filter}`)
       .then(res => {
         const formatted = res.data.map(item => ({
           name: ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"][item._id - 1],
@@ -64,7 +64,7 @@ function Dashboard() {
       })
       .catch(console.log);
 
-    axios.get(`http://localhost:5000/api/dashboard/order-status?filter=${filter}`)
+    axios.get(`https://sarathi-furniture.onrender.com/api/dashboard/order-status?filter=${filter}`)
       .then(res => {
         const formatted = res.data.map(item => ({
           name: item._id,
@@ -74,7 +74,7 @@ function Dashboard() {
       })
       .catch(console.log);
 
-    axios.get(`http://localhost:5000/api/dashboard/recent-orders?filter=${filter}`)
+    axios.get(`https://sarathi-furniture.onrender.com/api/dashboard/recent-orders?filter=${filter}`)
       .then(res => setOrders(res.data))
       .catch(console.log);
 

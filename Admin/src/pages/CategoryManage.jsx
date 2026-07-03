@@ -37,7 +37,7 @@ const CategoryManage = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/category");
+      const res = await axios.get("https://sarathi-furniture.onrender.com/api/category");
       setCategories(res.data);
     } catch (err) {
       console.error(err);
@@ -76,7 +76,7 @@ const CategoryManage = () => {
       if (editId) {
         //  UPDATE
         await axios.put(
-          `http://localhost:5000/api/category/${editId}`,
+          `https://sarathi-furniture.onrender.com/api/category/${editId}`,
           formData
         );
        showSuccess("Category updated ");
@@ -88,7 +88,7 @@ const CategoryManage = () => {
         }
 
         await axios.post(
-          "http://localhost:5000/api/category",
+          "https://sarathi-furniture.onrender.com/api/category",
           formData
         );
         showSuccess("Category added ");
@@ -120,13 +120,13 @@ const CategoryManage = () => {
       if (editSubId) {
         //  UPDATE
         await axios.put(
-          `http://localhost:5000/api/subcategory/${editSubId}`,
+          `https://sarathi-furniture.onrender.com/api/subcategory/${editSubId}`,
           { name: subName }
         );
         showSuccess("Subcategory updated ");
       } else {
         // ADD
-        await axios.post("http://localhost:5000/api/subcategory", {
+        await axios.post("https://sarathi-furniture.onrender.com/api/subcategory", {
           name: subName,
           categoryId,
         });
@@ -145,7 +145,7 @@ const CategoryManage = () => {
   const loadSubcategories = async (id) => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/subcategory/${id}`
+        `https://sarathi-furniture.onrender.com/api/subcategory/${id}`
       );
 
       setSubcategories((prev) => ({
@@ -179,7 +179,7 @@ const confirmDelete = async () => {
   try {
     if (deleteType === "category") {
       await axios.delete(
-        `http://localhost:5000/api/category/${deleteId}`
+        `https://sarathi-furniture.onrender.com/api/category/${deleteId}`
       );
       showSuccess("Category deleted 🗑️");
       fetchCategories();
@@ -187,7 +187,7 @@ const confirmDelete = async () => {
 
     if (deleteType === "sub") {
       await axios.delete(
-        `http://localhost:5000/api/subcategory/${deleteId}`
+        `https://sarathi-furniture.onrender.com/api/subcategory/${deleteId}`
       );
 
       setSubcategories((prev) => ({
@@ -259,7 +259,7 @@ const totalPages = Math.ceil(
         {currentCategories.map((cat) => (
           <div className="categoryCard" key={cat._id}>
             <img
-              src={`http://localhost:5000/uploads/${cat.image}`}
+              src={`https://sarathi-furniture.onrender.com/uploads/${cat.image}`}
               alt={cat.name}
             />
             <h3>{cat.name}</h3>
@@ -345,7 +345,7 @@ const totalPages = Math.ceil(
                 <tr key={cat._id}>
                   <td>
                     <img
-                      src={`http://localhost:5000/uploads/${cat.image}`}
+                      src={`https://sarathi-furniture.onrender.com/uploads/${cat.image}`}
                       alt={cat.name}
                     />
                   </td>

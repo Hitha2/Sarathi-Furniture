@@ -57,7 +57,7 @@ const AddProduct = () => {
 
   const fetchProducts = async () => {
   try {
-    const res = await axios.get("http://localhost:5000/api/product");
+    const res = await axios.get("https://sarathi-furniture.onrender.com/api/product");
 
     const data = res.data;
 
@@ -69,7 +69,7 @@ const AddProduct = () => {
 
   const fetchCategories = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/category");
+      const res = await axios.get("https://sarathi-furniture.onrender.com/api/category");
       setCategories(res.data);
     } catch (err) {
       console.error(err);
@@ -80,7 +80,7 @@ const AddProduct = () => {
   useEffect(() => {
     if (form.category) {
       axios
-        .get(`http://localhost:5000/api/subcategory/${form.category}`)
+        .get(`https://sarathi-furniture.onrender.com/api/subcategory/${form.category}`)
         .then((res) => setSubcategories(res.data))
         .catch((err) => console.error(err));
     } else {
@@ -122,14 +122,14 @@ const AddProduct = () => {
 
     if (isEdit) {
  await axios.put(
-  `http://localhost:5000/api/product/${editId}`,
+  `https://sarathi-furniture.onrender.com/api/product/${editId}`,
   formData
 );  
 showSuccess("Product Updated Successfully ");
 
     } else {
       await axios.post(
-        "http://localhost:5000/api/product",
+        "https://sarathi-furniture.onrender.com/api/product",
         formData
       );
 
@@ -160,7 +160,7 @@ const handleUpdate = async (id) => {
       formData.append("image", imageFile);
     }
 
-    await axios.put(`http://localhost:5000/api/product/${id}`, formData);
+    await axios.put(`https://sarathi-furniture.onrender.com/api/product/${id}`, formData);
 
     showSuccess("Product Updated Successfully ");
 
@@ -187,14 +187,14 @@ const handleUpdate = async (id) => {
       name: p.name,
     });
 
-    setPreview(`http://localhost:5000/uploads/${p.image}`);
+    setPreview(`https://sarathi-furniture.onrender.com/uploads/${p.image}`);
     setImageFile(null);
   };
 
   // ================= DELETE =================
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/product/${id}`);
+      await axios.delete(`https://sarathi-furniture.onrender.com/api/product/${id}`);
       showSuccess("Deleted successfully");
       fetchProducts();
     } catch (err) {
@@ -308,7 +308,7 @@ const filteredProducts = products
         <div className="mp-card" key={p._id}>
 
           <img
-            src={`http://localhost:5000/uploads/${p.image}`}
+            src={`https://sarathi-furniture.onrender.com/uploads/${p.image}`}
             alt=""
             className="mp-card-img"
           />
@@ -337,7 +337,7 @@ const filteredProducts = products
                     description: p.description,
                   });
 
-                  setPreview(`http://localhost:5000/uploads/${p.image}`);
+                  setPreview(`https://sarathi-furniture.onrender.com/uploads/${p.image}`);
                 }}>
                 Edit
               </button>
@@ -501,7 +501,7 @@ const filteredProducts = products
             <td>{p.name}</td>
             <td>
               <img
-                src={`http://localhost:5000/uploads/${p.image}`}
+                src={`https://sarathi-furniture.onrender.com/uploads/${p.image}`}
                 className="mp-product-img"
                 alt=""
               />
