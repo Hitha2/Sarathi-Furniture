@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../styles/Addproduct.css";
+import "../styles/AddProduct.css";
 import axios from "axios";
 import Select from "react-select";
 import { useLocation } from "react-router-dom";
