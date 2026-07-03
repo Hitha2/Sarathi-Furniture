@@ -14,7 +14,7 @@ import { useSearch } from "../context/SearchContext";
 import logo from "../assets/images/logo.jpg";
 import ShippingSettings from "../pages/ShippingSettings";
 
-const socket = io("http://localhost:5000");
+const socket = io("https://sarathi-furniture.onrender.com");
 
 const AdminHeader = () => {
   const [openProfile, setOpenProfile] = useState(false);
@@ -50,7 +50,7 @@ const clearAllNotifications = async () => {
   if (!confirmClear) return;
 
   try {
-    await axios.delete("http://localhost:5000/api/notifications/clear");
+    await axios.delete("https://sarathi-furniture.onrender.com/api/notifications/clear");
     setNotifications([]);
   } catch (err) {
     console.log(err);
@@ -59,7 +59,7 @@ const clearAllNotifications = async () => {
   // FETCH OLD NOTIFICATIONS ON PAGE LOAD
   const fetchNotifications = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/notifications");
+      const res = await axios.get("https://sarathi-furniture.onrender.com/api/notifications");
       setNotifications(res.data);
     } catch (err) {
       console.log(err);
@@ -102,7 +102,7 @@ const clearAllNotifications = async () => {
       setOpenNotification(false);
 
       // MARK ALL AS READ
-      axios.put("http://localhost:5000/api/notifications/mark-read")
+      axios.put("https://sarathi-furniture.onrender.com/api/notifications/mark-read")
         .then(() => {
 
           setNotifications((prev) =>
@@ -158,7 +158,7 @@ const unreadCount = notifications.filter(
 
           try {
             const res = await axios.get(
-              `http://localhost:5000/api/search?q=${encodeURIComponent(value)}`
+              `https://sarathi-furniture.onrender.com/api/search?q=${encodeURIComponent(value)}`
             );
 
             setSearchResults(res.data);
