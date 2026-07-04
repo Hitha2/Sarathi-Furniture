@@ -102,7 +102,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 /* ================= STATIC FOLDER ================= */
-app.use("/uploads", express.static("uploads"));
+// app.use("/uploads", express.static("uploads"));
 
 /* ================= API ROUTES ================= */
 
