@@ -454,7 +454,7 @@ const totalPages = Math.ceil(
                   </td>
 
                   <td>
-                    <button style={{color:"white", marginRight:"10px"}} onClick={() => handleEdit(cat)}>Edit</button>
+                    <button style={{color:"white", marginRight:"10px"}} onClick={() => handleEdit(cat._id)}>Edit</button>
                     <button style={{color:"white"}} onClick={() => handleDelete(cat._id)}>
                       Delete
                     </button>
