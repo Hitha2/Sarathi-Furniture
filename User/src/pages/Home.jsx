@@ -103,7 +103,7 @@ const Home = () => {
             className="category-card"
           >
             <img 
-              src={`https://sarathi-furniture.onrender.com/uploads/${cat.image}`} 
+              src={cat.image}
               alt={cat.name} 
             />
             <p>{cat.name}</p>
