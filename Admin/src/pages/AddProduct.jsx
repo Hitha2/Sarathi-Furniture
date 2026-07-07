@@ -187,7 +187,7 @@ const handleUpdate = async (id) => {
       name: p.name,
     });
 
-    setPreview(`https://sarathi-furniture.onrender.com/uploads/${p.image}`);
+    setPreview(p.image);
     setImageFile(null);
   };
 
@@ -308,7 +308,7 @@ const filteredProducts = products
         <div className="mp-card" key={p._id}>
 
           <img
-            src={`https://sarathi-furniture.onrender.com/uploads/${p.image}`}
+            src={p.image}
             alt=""
             className="mp-card-img"
           />
@@ -337,7 +337,7 @@ const filteredProducts = products
                     description: p.description,
                   });
 
-                  setPreview(`https://sarathi-furniture.onrender.com/uploads/${p.image}`);
+                  setPreview(p.image);
                 }}>
                 Edit
               </button>
@@ -501,7 +501,7 @@ const filteredProducts = products
             <td>{p.name}</td>
             <td>
               <img
-                src={`https://sarathi-furniture.onrender.com/uploads/${p.image}`}
+                src={p.image}
                 className="mp-product-img"
                 alt=""
               />

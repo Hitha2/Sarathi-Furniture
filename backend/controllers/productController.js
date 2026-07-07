@@ -14,7 +14,7 @@ export const addProduct = async (req, res) => {
       price,
       discount,
       description,
-      image: req.file ? req.file.filename : "",
+      image: req.file ? req.file.path : "",
     });
 
     await Inventory.create({
@@ -118,7 +118,7 @@ export const updateProduct = async (req, res) => {
     };
 
     if (req.file) {
-      updateData.image = req.file.filename;
+      updateData.image = req.file.path;
     }
 
     const updated = await Product.findByIdAndUpdate(

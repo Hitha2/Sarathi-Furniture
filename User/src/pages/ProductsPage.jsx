@@ -546,7 +546,7 @@ const totalPages = isMobile
                         <FaRegHeart />
                       )}
                     </div>
-                    <img src={`https://sarathi-furniture.onrender.com/uploads/${p.image}`} alt="" />
+                    <img src={p.image} alt="" />
 
                     {/* ✅ STOCK BADGE */}
                     {p.stock === 0 && (

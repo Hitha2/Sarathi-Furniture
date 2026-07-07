@@ -187,7 +187,7 @@ useEffect(() => {
         {/* LEFT IMAGE */}
         <div className="image-section">
           <img
-            src={`https://sarathi-furniture.onrender.com/uploads/${product.image}`}
+            src={product.image}
             alt=""
           />
 
@@ -412,7 +412,7 @@ useEffect(() => {
                     {likedMap[item._id] ? <FaHeart /> : <FaRegHeart />}
                   </div>
                   <img
-                    src={`https://sarathi-furniture.onrender.com/uploads/${item.image}`}
+                    src={item.image}
                     alt=""
                   />
 
