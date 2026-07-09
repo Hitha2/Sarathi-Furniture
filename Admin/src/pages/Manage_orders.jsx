@@ -269,11 +269,12 @@ const AdminOrders = () => {
 
                 <div className="mobileProductBox">
                   <img
-                    src={`https://sarathi-furniture.onrender.com/uploads/${
-                      row.item.image || row.item.productId?.image
-                    }`}
+                    src={row.item.image || row.item.productId?.image}
                     alt=""
                     className="mobileProductImg"
+                    onError={(e) => {
+                      e.target.src = "https://via.placeholder.com/150";
+                    }}
                   />
 
                   <div>
@@ -454,11 +455,12 @@ const AdminOrders = () => {
       <td>
         <div className="tableProductBox">
           <img
-            src={`https://sarathi-furniture.onrender.com/uploads/${
-              row.item.image || row.item.productId?.image
-            }`}
+            src={row.item.image || row.item.productId?.image}
             className="tableProductImg"
             alt=""
+            onError={(e) => {
+              e.target.src = "https://via.placeholder.com/150";
+            }}
           />
 
           <div>
