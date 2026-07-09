@@ -100,7 +100,7 @@ const Wishlist = () => {
           }}
           >
             <img
-              src={`https://sarathi-furniture.onrender.com/uploads/${product.image}`}
+              src={product.image}
               alt="product"
             />
 
