@@ -99,11 +99,14 @@ const Wishlist = () => {
             navigate(`/product/${product._id}`);
           }}
           >
-            <img
+           <img
               src={product.image}
-              alt="product"
+              alt={product.name}
+              onError={(e) => {
+                console.log("Image URL:", product.image);
+                e.target.src = "https://via.placeholder.com/150";
+              }}
             />
-
             <div className="wishlist-info">
 
               <h4 className="wishlist-product-name">

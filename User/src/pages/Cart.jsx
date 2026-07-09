@@ -1039,6 +1039,10 @@ const validateNewAddress = () => {
               <img
                 src={item.image}
                 alt=""
+                onError={(e) => {
+                  console.log("Image URL:", item.image);
+                  e.target.src = "https://via.placeholder.com/150";
+                }}
               />
               <p className="suggested-name">{item.name}</p>
               <p className="name">{item.subcategoryId?.name}</p>
