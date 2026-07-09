@@ -3,13 +3,15 @@ import Category from "../models/Category.js";
 // ✅ ADD CATEGORY
 export const addCategory = async (req, res) => {
   try {
+    console.log(req.file);
+
     if (!req.file) {
       return res.status(400).json({ msg: "Image required" });
     }
 
     const newCategory = new Category({
       name: req.body.name,
-      image: req.file.filename,
+      image: req.file.path,
     });
 
     await newCategory.save();
@@ -48,7 +50,7 @@ export const updateCategory = async (req, res) => {
 
     // 🔥 If new image uploaded
     if (req.file) {
-      updateData.image = req.file.filename;
+      updateData.image = req.file.path;
     }
 
     const updated = await Category.findByIdAndUpdate(

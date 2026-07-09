@@ -259,7 +259,7 @@ const totalPages = Math.ceil(
         {currentCategories.map((cat) => (
           <div className="categoryCard" key={cat._id}>
             <img
-              src={`https://sarathi-furniture.onrender.com/uploads/${cat.image}`}
+              src={cat.image}
               alt={cat.name}
             />
             <h3>{cat.name}</h3>
@@ -345,7 +345,7 @@ const totalPages = Math.ceil(
                 <tr key={cat._id}>
                   <td>
                     <img
-                      src={`https://sarathi-furniture.onrender.com/uploads/${cat.image}`}
+                      src={cat.image}
                       alt={cat.name}
                     />
                   </td>
@@ -454,7 +454,7 @@ const totalPages = Math.ceil(
                   </td>
 
                   <td>
-                    <button style={{color:"white", marginRight:"10px"}} onClick={() => handleEdit(cat._id)}>Edit</button>
+                    <button style={{color:"white", marginRight:"10px"}} onClick={() => handleEdit(cat)}>Edit</button>
                     <button style={{color:"white"}} onClick={() => handleDelete(cat._id)}>
                       Delete
                     </button>
