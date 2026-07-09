@@ -506,7 +506,7 @@ const validateNewAddress = () => {
             <div key={item._id} className="cart-item">
               
               <img
-                src={`https://sarathi-furniture.onrender.com/uploads/${item.image}`}
+                src={item.image}
                 alt=""
               />
 
@@ -1037,7 +1037,7 @@ const validateNewAddress = () => {
                 )}
               </div>
               <img
-                src={`https://sarathi-furniture.onrender.com/uploads/${item.image}`}
+                src={item.image}
                 alt=""
               />
               <p className="suggested-name">{item.name}</p>
