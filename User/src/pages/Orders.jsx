@@ -116,12 +116,13 @@ const Orders = () => {
 
                     {/* IMAGE */}
                     <img
-                      src={`https://sarathi-furniture.onrender.com/uploads/${
-                        item.image || item.productId?.image
-                      }`}
-                      alt=""
-                      className="order-img"
-                    />
+                        src={item.image || item.productId?.image}
+                        alt={item.name || item.productId?.name}
+                        className="order-img"
+                        onError={(e) => {
+                          e.target.src = "https://via.placeholder.com/150";
+                        }}
+                      />
 
                     {/* INFO */}
                     <div className="order-info">
