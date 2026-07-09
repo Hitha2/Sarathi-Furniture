@@ -539,13 +539,13 @@ const getDiscountedPrice = (item) => {
        {/* PRODUCTS */}
         <div className="product-box">
 
-        <img
-          src={`https://sarathi-furniture.onrender.com/uploads/${
-            selectedItem?.productId?.image || selectedItem?.image
-          }`}
-          alt=""
+       <img
+          src={selectedItem?.productId?.image || selectedItem?.image}
+          alt={selectedItem?.name || "Product"}
+          onError={(e) => {
+            e.target.src = "https://via.placeholder.com/300";
+          }}
         />
-
         <div>
           <h4>Order #{order._id.slice(-8)}</h4>
 
