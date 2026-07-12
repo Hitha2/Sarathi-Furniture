@@ -11,12 +11,13 @@ export const googleSuccess = async (req, res) => {
       { expiresIn: "7d" }
     );
 
-    const redirectUrl = `http://localhost:5173/login-success?token=${token}&userId=${user._id}&name=${encodeURIComponent(user.name)}&email=${encodeURIComponent(user.email)}`;
+    // ✅ Redirect to your deployed Vercel frontend
+    const redirectUrl = `https://sarathi-furniture.vercel.app/login-success?token=${token}&userId=${user._id}&name=${encodeURIComponent(user.name)}&email=${encodeURIComponent(user.email)}`;
 
     res.redirect(redirectUrl);
 
   } catch (err) {
-    res.redirect("http://localhost:5173/login");
+    res.redirect("https://sarathi-furniture.vercel.app/login");
   }
 };
 
@@ -38,7 +39,7 @@ export const logoutUser = async (req, res) => {
       }
     }
 
-    req.logout(function(err) {
+    req.logout(function (err) {
       if (err) {
         return res.status(500).json({ message: "Logout error" });
       }

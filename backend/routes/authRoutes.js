@@ -30,7 +30,7 @@ router.get(
     const email = encodeURIComponent(req.user.email || "");
 
     res.redirect(
-      `http://localhost:5173/login-success?token=${token}&userId=${userId}&name=${name}&email=${email}`
+      `https://sarathi-furniture.vercel.app/login-success?token=${token}&userId=${userId}&name=${name}&email=${email}`
     );
   }
 );
